@@ -1,0 +1,16 @@
+﻿@using ServerMonitor.Models
+@model Frame
+
+
+<div class="main-param">
+    <h2>CPU usage:</h2>
+    <p class="performance1-param" id="cpu1-param">@Model.CpuUsagePercent%</p>
+</div>
+<div class="main-param">
+    <h2>RAM usage:</h2>
+    <p class="performance-param" id="ram-param">@Model.MemoryUsagePercent%</p>
+</div>
+<div class="main-param">
+    <h2>Disk usage:</h2>
+    <p class="performance-param" id="disk-param">@Model.DiskUsagePercent%</p>
+</div>

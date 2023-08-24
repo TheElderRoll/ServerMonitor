@@ -1,0 +1,23 @@
+﻿
+<script>
+    function showLoading() { $("#loading-img").show(); }
+    function hideLoading() { $("#loading-img").hide(); }
+    function errorLoading() { $("#loading-img").show(); }
+</script>
+
+@using (Ajax.BeginForm("GetPeriodMetrics", new AjaxOptions { UpdateTargetId = "frames-list-container", InsertionMode = InsertionMode.Replace, HttpMethod= "POST", OnBegin="showLoading", OnComplete="hideLoading", OnFailure="errorLoading"}))
+{
+    <label>Start:</label>
+    <input type="datetime-local" id="start-datetime" placeholder="Дата" name="startTime" />
+    <label>End:</label>
+    <input type="datetime-local" id="end-datetime" placeholder="Дата" name="endTime" />
+    <input type="submit" class="atuin-btn" value="Send" />
+}
+<div class="block-container">
+    <div id="frames-list-container"></div>
+</div>
+<div id="loading-img" style="display:none">
+    <img src="~/Resources/loading.gif" />
+</div>
+
+
